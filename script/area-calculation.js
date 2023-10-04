@@ -25,6 +25,9 @@ function calculateTriangle() {
     // show triangle area
     const areaSpan = document.getElementById('triangle-area');
     areaSpan.innerText = area;
+
+    // add to calculation entry
+    addToCalculationEntry('triangle', area)
     
 }
 
@@ -55,6 +58,9 @@ function calculateRectangle() {
 
     const areaSpan = document.getElementById('rectangle-area');
     areaSpan.innerText = area;
+
+    // add to calculation entry
+    addToCalculationEntry('rectangle', area)
 }
 
 function calculateparallelogramArea() {
@@ -69,6 +75,10 @@ function calculateparallelogramArea() {
 
     const area = base * height;
     setElementInnerText('parallelogram-area', area);
+    
+
+    // add to calculation entry
+    addToCalculationEntry('parallelogram', area)
 
 
 }
@@ -85,6 +95,9 @@ function calculateEllipseArea() {
 
     const area = 3.14 * a_axis * b_axis;
     setElementInnerText('ellipse-area', area);
+
+    // add to calculation entry
+    addToCalculationEntry('ellipse', area)
 }
 
 function getinputvalue(fieldId) {
@@ -98,4 +111,18 @@ function getinputvalue(fieldId) {
 function setElementInnerText(elementId,area) {
     const element = document.getElementById(elementId);
     element.innerText = area;
+}
+
+
+// add to calculations entry
+function addToCalculationEntry(areaType,area) {
+    console.log(areaType + " " + area)
+    const calculationEntry = document.getElementById('area-calculation');
+
+    const count = calculationEntry.childElementCount;
+
+    const p = document.createElement('p');
+    p.innerHTML = `${count + 1}.  ${areaType} ${area} cm<sup>2</sup>`
+    calculationEntry.appendChild(p);
+
 }
