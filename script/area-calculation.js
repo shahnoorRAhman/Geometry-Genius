@@ -13,6 +13,12 @@ function calculateTriangle() {
     heightField.value = '';
     const height = parseFloat(heightvalueText);
 
+    // validation of input
+    if (isNaN(base) || isNaN(height)) {
+        alert('please enter a valid number');
+        return;
+    }
+
     const area = 0.5 * base * height;
     console.log('Area:', area);
     
@@ -37,6 +43,12 @@ function calculateRectangle() {
     lengthField.value = '';
     const length = parseFloat(lengthTextValue);
 
+     // validation of input
+     if (isNaN(width) || isNaN(length)) {
+        alert('please enter a valid number');
+        return;
+    }
+
     // get area value
     const area = width * length;
     console.log('Area:', area);
@@ -48,6 +60,12 @@ function calculateRectangle() {
 function calculateparallelogramArea() {
     const base = getinputvalue('parallelogram-base')
     const height = getinputvalue('parallelogram-height')
+   
+     // validation of input
+     if (isNaN(base) || isNaN(height)) {
+        alert('please enter a valid number');
+        return;
+    }
 
     const area = base * height;
     setElementInnerText('parallelogram-area', area);
@@ -58,6 +76,12 @@ function calculateparallelogramArea() {
 function calculateEllipseArea() {
     const a_axis = getinputvalue('ellipse-a-axis')
     const b_axis = getinputvalue('ellipse-b-axis')
+
+     // validation of input
+     if (isNaN( a_axis) || isNaN(b_axis)) {
+        alert('please enter a valid number');
+        return;
+    }
 
     const area = 3.14 * a_axis * b_axis;
     setElementInnerText('ellipse-area', area);
