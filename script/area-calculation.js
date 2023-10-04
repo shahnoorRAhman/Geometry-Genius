@@ -44,3 +44,34 @@ function calculateRectangle() {
     const areaSpan = document.getElementById('rectangle-area');
     areaSpan.innerText = area;
 }
+
+function calculateparallelogramArea() {
+    const base = getinputvalue('parallelogram-base')
+    const height = getinputvalue('parallelogram-height')
+
+    const area = base * height;
+    setElementInnerText('parallelogram-area', area);
+
+
+}
+
+function calculateEllipseArea() {
+    const a_axis = getinputvalue('ellipse-a-axis')
+    const b_axis = getinputvalue('ellipse-b-axis')
+
+    const area = 3.14 * a_axis * b_axis;
+    setElementInnerText('ellipse-area', area);
+}
+
+function getinputvalue(fieldId) {
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+    inputField.value = '';
+    const value = parseFloat(inputValueText)
+    return value;
+}
+
+function setElementInnerText(elementId,area) {
+    const element = document.getElementById(elementId);
+    element.innerText = area;
+}
